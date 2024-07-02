@@ -14,9 +14,14 @@ public class DropDownCheckBoxRadioButton extends PageObject {
 	}
 	
 	@FindBy(xpath="//*[@id=\"checkboxes\"]/label[4]")
-	private WebElement checkBox;;
+	private WebElement checkBox;
+
+	@FindBy(id="dropdowm-menu-1")
+	private WebElement dropDownMenu;
 	
 	public void clickCheckBox() {
+		Select select = new Select(dropDownMenu);
+		select.selectByIndex(1);
 		checkBox.click();
 	}
 }
